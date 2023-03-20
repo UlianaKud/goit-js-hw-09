@@ -1,0 +1,23 @@
+.timer{
+    display: flex;
+    gap: 20px;
+    /* flex-direction: row; */
+}
+.field{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.value{
+    font-size: 40px;
+}
+.label{
+    text-transform: uppercase;
+}
+.flatpickr-input{
+    font-size: 20px;
+    margin-bottom: 30px;
+}
+button{
+    font-size: 20px;
+}
