@@ -12,6 +12,7 @@ startButton.setAttribute('disabled', 'disabled');
 let selectedDate;
 let presentDate;
 let ms;
+let timerId = null;
 
 const options = {
   enableTime: true,
