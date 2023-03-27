@@ -80,9 +80,9 @@ const handleCountdown = () => {
   runTimer();
   timerId = setInterval(() => {
     runTimer();
+    if (ms < 1000) {
+      clearInterval(timerId);
+    }
   }, 1000);
-  if (ms === 0) {
-    clearInterval(timerId);
-  }
 };
 startButton.addEventListener('click', handleCountdown);

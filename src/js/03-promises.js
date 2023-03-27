@@ -20,9 +20,15 @@ function createPromise(position, delay) {
 
 const handleSubmit = e => {
   e.preventDefault();
-  const amount = amountInput.value > 0 ? amountInput.value : 0;
-  const delay = firstDelay.value > 0 ? firstDelay.value : 0;
-  const step = delayStep.value > 0 ? delayStep.value : 0;
+  const amount = amountInput.value;
+  const delay = firstDelay.value;
+  const step = delayStep.value;
+
+  if (+amount <= 0 || +delay <= 0 || +step <= 0) {
+    Notiflix.Notify.failure(`❌ All values should be greater than zero!`);
+    return;
+  }
+
   for (let index = 0; index < amount; index++) {
     createPromise(index + 1, +delay + +step * index)
       .then(({ position, delay }) => {
