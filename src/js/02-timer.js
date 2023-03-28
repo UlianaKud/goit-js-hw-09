@@ -82,6 +82,7 @@ const handleCountdown = () => {
     runTimer();
     if (ms < 1000) {
       clearInterval(timerId);
+      startButton.setAttribute('disabled', 'disabled');
     }
   }, 1000);
 };
